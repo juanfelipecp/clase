@@ -6,6 +6,13 @@ router.get('/agregar',async(req,res) => {
     const notas = await pool.query('SELECT id_notas,id_estudiantes,id_docentes,id_materia,id_periodo,nota FROM notas')
     res.render('notas/agregar',{notas});
 });
+router.post("/agregar",async(req,res)=>{
+            const {id_notas,id_estudiantes,id_docentes,id_materia,id_periodo,nota}= req.body;
+            const newUser = {id_notas,id_estudiantes,id_docentes,id_materia,id_periodo,nota};
+
+        await pool.query("insert into notas set ?", [newUser]);
+        res.redirect("/notas/agregar");
+});
 
 router.get('/eliminar', (req,res) => {
 
