@@ -1,7 +1,7 @@
 <h2>yo soy agregar asignar</h2>
 </form>
 
-    {{#each asignar}}
+{{#each asignar}}
 
 
 <div class="container">
@@ -26,28 +26,40 @@
 {{/each}}
 
 <div class="container p-4">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="car-bady">
-                    <form action=""method="post">
-                        <div class="form-group">
-                            <label for="">Registrar</label>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="id_docente" id="">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="id_materia" id="" >
-                        </div>
-                          <div class="form-group">
-                            <input class="form-control" type="text" name="id_periodo" id="" >
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-block">Enviar</button>
-                        </div>
-                    </form>
-                </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="car-bady">
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="">Registrar</label>
             </div>
+            <div class="form-group">
+              <select name="id_docente">
+                {{#each docen}}
+                <option value="{{id_docente}}">{{nombre_docen}}</option>
+                {{/each}}
+              </select><br>
+            </div>
+            <div class="form-group">
+              <select name="id_materia">
+                {{#each materia}}
+                <option value="{{id_materia}}">{{materia}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <div class="form-group">
+              <select name="id_periodo">
+                {{#each periodo}}
+                <option value="{{id_periodo}}">{{periodo}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-block">Enviar</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
