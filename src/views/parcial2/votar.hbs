@@ -1,0 +1,73 @@
+<center>
+    <h3>Postulados</h3>
+</center>
+{{#each post}}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            {{nombre}}
+        </div>
+
+    </div>
+</div>
+{{/each}}
+
+<br>
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="car-bady">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="">votar</label>
+                        </div>
+                        <div>
+                            <select name="nombre">
+                                {{#each pers}}
+                                <option value="{{nombre}}">{{nombre}}</option>
+                                {{/each}}
+                            </select>
+
+                        </div>
+                        <div>
+                            <select name="documento">
+                                {{#each pers}}
+                                <option value="{{documento}}">{{documento}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="voto">
+                                {{#each post}}
+                                <option value="{{nombre}}">{{nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>VOTOS</h1>
+    {{#each voto}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                {{documento}}
+            </div>
+            <div class="col-sm">
+                {{nombre}}
+            </div>
+            <div class="col-sm">
+                {{voto}}
+            </div>
+        </div>
+    </div>
+    {{/each}}

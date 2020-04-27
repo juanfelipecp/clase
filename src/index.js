@@ -46,6 +46,7 @@ app.use('/notas',require('./routes/notas'));
 app.use('/materia',require('./routes/materia'));
 app.use('/periodo',require('./routes/periodo'));
 app.use('/asignar',require('./routes/asignar'));
+app.use('/parcial2',require('./routes/parcial2'));
 
 
 

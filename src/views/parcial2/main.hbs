@@ -1,0 +1,54 @@
+<div class="container p-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="car-bady">
+            <form action="" method="post">
+              <div class="form-group">
+                <label for="">Registrar</label>
+              </div>
+              <div class="form-group">
+               <input class="form-control" type="text" name="documento" id="" placeholder=" documento">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="nombre" id="" placeholder=" nombre">
+              </div>
+              <div class="form-group">
+                <select name="tipo">
+                  {{#each tipo}}
+                  <option value="{{id_tipo}}">{{tipo}}</option>
+                  {{/each}}
+                </select><br>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     {{#each pers}}
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm">
+      {{id_personas}}
+    </div>
+    <div class="col-sm">
+      {{documento}}
+    </div>
+    <div class="col-sm">
+      {{nombre}}
+    </div>
+    <div class="col-sm">
+      {{tipo}}
+    </div>
+  </div>
+</div>
+
+
+
+
+{{/each}}
