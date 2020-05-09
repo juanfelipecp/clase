@@ -1,2 +1,57 @@
-estudiantes
-soy modificar
+{{#each notas}}
+<div class="container">
+    <div class="row">
+        <h5> id_notas</h5>
+        <div class="col-sm">
+            {{id_notas}}
+        </div>
+        <h5>id_Estudiantes</h5>
+        <div class="col-sm">
+            {{id_estudiantes}}
+        </div>
+        <h5>id_docentes</h5>
+        <div class="col-sm">
+            {{id_docentes}}
+        </div>
+        <h5>id_materia</h5>
+        <div class="col-sm">
+            {{id_materia}}
+        </div>
+        <h5>id_periodo</h5>
+        <div class="col-sm">
+            {{id_periodo}}
+        </div>
+        <h5>nota</h5>
+        <div class="col-sm">
+            {{nota}}
+        </div>
+        <div class="col-sm">
+            <a href="/notas/modificar/{{id_notas}}" class="btn btn-danger">modificar</a>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+{{#each notasid}}
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="car-bady">
+          <form action="/notas/modificaar/{{id_notas}}" method="post">
+            <div class="form-group">
+              <label for="">Registrar</label>
+            </div>
+            <div class="form-group">
+              <input class="form-control" value="{{nota}}" name="nota" placeholder=" ingresar edad" id="">
+              <div class="form-group">
+                <button type="submit" value="{{id_notas}}" class="btn btn-success btn-block"> Enviar</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {{/each}}
