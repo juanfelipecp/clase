@@ -1,0 +1,78 @@
+<div class="conten">
+  <div class="col-md-6 col-md-offset-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Facebook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="buscar" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">buscar</button>
+        </form>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="">{{#each perfil}} {{nombre}} {{/each}} <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">crear</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">inicio</a>
+              <a class="dropdown-item" href="#">configuracion</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">salir</a>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+  </div>
+
+  </nav>
+  <div class="row">
+    <div class="col-md-4 "><img src="/sapo.jpg" width=" 200" height=" 150"></div>
+    <div class="col-md-4">
+      <h3>{{#each perfil}} {{nombre}} {{/each}}</h3>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 ">
+      <h5>fecha de ingreso : {{#each perfil}} {{union}} {{/each}}</h5>
+      <h5>genero : {{#each perfil}} {{genero}} {{/each}}</h5>
+      <h5>edad : {{#each perfil}} {{edad}} {{/each}}</h5>
+      <h5>trabajo : {{#each perfil}} {{trabajo}} {{/each}}</h5>
+    </div>
+    <div class="col-md-4 ">
+      <form action="/parcial3/perfil/publicar" method="POST">
+      <input type="hidden" value="{{#each perfil}} {{nombre}} {{/each}}" name="nombre">
+      <input type="hidden" value= name="likes">
+      <input type="text" id="" name="publicacion" class="form-control" placeholder="¿que estas pensando?">
+      <button class="btn btn-primary"type="submit">publicar</button>
+      <small id="passwordHelpBlock" class="form-text text-muted">
+        comparte lo que piensas con tus amigos
+      </small>
+      </form>
+    </div>
+    <br><h5>{{#each publi}}<br> {{nombre}}     publico     <br>  <br> {{publicacion}} <br> <br>  likes : {{likes}} <form action="/parcial3/perfil/like/{{id_publicacion}}" method="POST">
+    <input type="hidden" value={{likes}}>
+    <button type="submit">like</button>
+    </form>{{/each}} 
+    </a> </div>
+
+  </div>
+
+
+</div>

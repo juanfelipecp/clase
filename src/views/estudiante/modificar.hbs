@@ -2,11 +2,11 @@ estudiantes
 soy modificar
 </form>
 
-    {{#each estu}}
+{{#each estu}}
 
 <div class="container">
   <div class="row">
-      <div class="col-sm">
+    <div class="col-sm">
       {{id_estudiantes}}
     </div>
     <div class="col-sm">
@@ -19,42 +19,54 @@ soy modificar
       {{correo}}
     </div>
     <div>
-      <a href="/estu/modificar/{{id_estudiantes}}" type=" btn btn-green">Modificar</a>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editar{{id_estudiantes}}">
+        editar
+      </button>
     </div>
   </div>
 </div>
 
+<!-- Modal editar -->
+<div class="modal fade" id="editar{{id_estudiantes}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 
-{{/each}}
 
-{{#each estuid}}
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="car-bady">
-                    <form action="/estu/modificaar/{{id_estudiantes}}"method="post">
-                        <div class="form-group">
-                            <label for="">Registrar</label>
-                        </div>
-                          <div class="form-group">
-                            <input class="form-control" value="{{nombre_estu}}"name="nombre_estu"  placeholder=" ingresar edad"id="" >
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" value="{{edad}}"type="text" name="edad"placeholder=" ingresar correo" id="">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" value="{{correo}}"type="text" name="correo"placeholder=" ingresar correo" id="">
-                        </div>
+        <form action="/estu/modificaar/{{id_estudiantes}}" method="post">
+          <div class="form-group">
+            <label for="exampleInputEmail1">materia</label>
 
-                        <div class="form-group">
-                            <button  type="submit" value="{{id_estudiantes}}" class="btn btn-success btn-block"> Enviar</button> 
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+          </div>
+          <div class="form-group">
+            <input class="form-control" value="{{nombre_estu}}" name="nombre_estu" placeholder=" ingresar edad" id="">
+          </div>
+          <div class="form-group">
+            <input class="form-control" value="{{edad}}" type="text" name="edad" placeholder=" ingresar correo" id="">
+          </div>
+          <div class="form-group">
+            <input class="form-control" value="{{correo}}" type="text" name="correo" placeholder=" ingresar correo"
+              id="">
+          </div>
+      </div>
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" value="{{id_estudiantes}}" class="btn btn-primary">enviar</button>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
 
 
 {{/each}}
